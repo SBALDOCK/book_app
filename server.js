@@ -20,9 +20,15 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', (request, res) => {
-  res.render('index.ejs');
-  res.status(200).send('hello sdfadsf!')
+  res.render('pages/index.ejs');
+//   res.status(200).send('hello!')
 })
+
+app.get('/searches/new', (request, res)=>{
+  res.render('pages/searches/new.ejs');
+})
+
+
 
 
 app.listen(PORT, ()=>{

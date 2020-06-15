@@ -30,23 +30,23 @@ Book App Assignment - Lab 11
 
 ### Feature #1: 
 
-Number and name of feature: ________________________________
+Number and name of feature: Feature 1
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 45min
 
-Start time: _____
+Start time: 1:30
 
-Finish time: _____
+Finish time: 2:44
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1.15hrs
 
 ### Feature #2:
 
-Number and name of feature: ________________________________
+Number and name of feature: Google Books API
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1hr
 
-Start time: _____
+Start time: 3:00
 
 Finish time: _____
 
