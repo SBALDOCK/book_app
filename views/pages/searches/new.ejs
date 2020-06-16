@@ -12,17 +12,14 @@
       
     <main>
         <h2>Search By Title Or Author</h2>
-        <form action="/contact" method="post">
+        <form action="/searches" method="post">
             <fieldset>
               <legend>Find Book</legend>
-              <label>
+              <input type="text" name="search" placeholder="search for new book" required>
                 <span>Title:</span>
-                <input type="text" name="title">
-              </label>
-              <label>
+                <input type="radio" name="search" value="title" required>
                 <span>Author:</span>
-                <input type="text" name="author">
-              </label>
+                <input type="radio" name="search" value="author" required>
               <button>Submit</button>
             </fieldset>
           </form>

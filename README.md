@@ -48,9 +48,9 @@ Estimate of time needed to complete: 1hr
 
 Start time: 3:00
 
-Finish time: _____
+Finish time: 3:23
 
-Actual time needed to complete: _____
+Actual time needed to complete: 23min
 
 ### Feature #3: 
 
