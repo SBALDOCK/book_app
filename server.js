@@ -57,8 +57,10 @@ app.post('/searches', (request, response) => {
 /// Book constructor
 function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
+  this.image = info.imageLinks ? info.imageLinks : placeholderImage;
   this.title = info.title ? info.title : 'no title available';
-  this.author = info.author;
+  this.author = info.author ? info.authors : 'not available';
+  this.description = info.description ? info.description: 'not available';
 
 
 }

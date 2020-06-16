@@ -10,21 +10,35 @@
   </head>
   <body>
       
-    <main class="newejs">
-        <h1>Best Books</h1>
-        <h2>Search by Title or Author</h2>
+    <main>
+      <div class="container">
+      <div class="one">
+        <h1>Best Books!</h1>
+      </div>
+      <div class="two">
+        <h1>Search by Title or Author</h1>
+      </div>
+        <div class="three">
         <form action="/searches" method="post">
-            <fieldset>
-                <p>Enter a title or author</p>
-              <input type="text" name="search" placeholder="search for new book" required>
+                <input id="search" type="text" name="search" placeholder="Enter a title or author" required>
+              <div id="title">
                 <span>Title:</span>
                 <input type="radio" name="search" value="title" required>
+              </div>
+              <div id="author">
                 <span>Author:</span>
                 <input type="radio" name="search" value="author" required>
-              <button>Search the Google Books API</button>
-            </fieldset>
-          </form>
-​       <div class="footerdiv"></div>
+              </div>
+                <button id="button">Search the Google Books API</button>
+        </form>
+        </div>
+        <div class="four">
+          <div class="footer"></div>
+          <div class="footer"></div>
+          <div class="footer"></div>
+          <div class="footer"></div>
+        </div>
+      </div>
     </main>
     
   </body>
