@@ -26,7 +26,7 @@ Book App Assignment - Lab 11
 -->
 
 
-
+## Monday, June 15, 2020 - Lab 11
 
 ### Feature #1: 
 
@@ -72,6 +72,58 @@ Estimate of time needed to complete: 10min
 
 Start time: 5:30
 
-Finish time: _____
+Finish time: 6:40
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30 Minutes
+
+
+
+## Tuesday, June 16, 2020 - Lab 12
+
+### Feature #1: 
+
+Number and name of feature: Feature 1
+
+Estimate of time needed to complete: 
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+### Feature #2:
+
+Number and name of feature: Google Books API
+
+Estimate of time needed to complete: 
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+### Feature #3: 
+
+Number and name of feature: render submit form
+
+Estimate of time needed to complete: 
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete:
+
+### Feature #4: 
+
+Number and name of feature: 
+
+Estimate of time needed to complete: 
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 

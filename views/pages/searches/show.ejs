@@ -11,26 +11,27 @@
   <body>
     <main>
       <div class="container">
-      <div class="one">
-        <h1>Best Books!</h1>
-      </div>
-      <div class="two">
-        <h1>Search Results</h1>
-      </div>
-      <div class="three">
-        <% books.forEach( book => { %>
-          <img src="<%=book.image%>" alt="<%=book.title%>" />
+        <div class="one">
+          <h1>Best Books!</h1>
+        </div>
+        <div class="two">
+          <h1>Search Results</h1>
+        </div>
+        <div class="three">
+          <% books.forEach( book => { %>
+            <img src="<%=book.image%>" alt="<%=book.title%>" />
             <h3>"<%=book.title%>"</h3>
             <h4>"<%=book.authors%>"</h4>
             <p>"<%=book.description%>"</p>
-        <% }) %>
-      </div>
-      <div class="four">
-        <div class="footer"></div>
-        <div class="footer"></div>
-        <div class="footer"></div>
-        <div class="footer"></div>
-      </div>
+          <% }) %>
+         
+        </div>
+        <div class="four">
+          <div class="footer"></div>
+          <div class="footer"></div>
+          <div class="footer"></div>
+          <div class="footer"></div>
+        </div>
       </div>
     </main>
   </body>
