@@ -1,49 +1,92 @@
-/* body{
+
+
+body{
     width: 480px;
-    text-align: center;
-    margin: auto;
-   
 
-    
-} */
+}
 
-
-
-
-
-
-.newejs{
-    background-color: rgb(123, 133, 152);
+.container{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr auto 1fr ;
-/* height: 400px; */
+    grid-template-rows: 100px 100px auto 100px;
+    height: 100vh;
 }
-h1{
+.one{
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+    font-size: 2em;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
-   
+    line-height: 100px;
 }
-h2{
+.two{
+    background-color: rgb(61, 60, 60);
+    border: 1px solid black;
+    color: white;
+    font-size: 1.5em;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
-    grid-row-end: 3;   
+    grid-row-end: 3;  
+    line-height: 100px;
+    text-align: center; 
 }
 
-form{
+.three{
+    align-items: center;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 3;
     grid-row-end: 4; 
+    background-color:rgb(149, 147, 147);
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
 }
 
-.footerdiv{
+.four{
+    align-items: center;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 4;
     grid-row-end: 5; 
+    justify-content: space-around;
+}
+
+#search, #title, #author, #button{
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: 30px;
+    padding: 20px;
+    width: 275px;
+}
+
+#search{
+    font-size: 1em;
+}
+
+#title, #author{
+    background-color: lightgray;
+}
+
+#button{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    width: 320px;
+}
+
+.footer{
+    background-color: rgb(61, 60, 60);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
 }
 
