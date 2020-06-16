@@ -90,3 +90,10 @@ body{
     width: 30px;
 }
 
+#nav{
+    border: 1px solid white;
+    position: absolute;
+    top: 40px;
+    left: 375px;
+
+}
