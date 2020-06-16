@@ -2,6 +2,11 @@
 <html lang=“en”>
   <head>
     <title>Book Collection</title>
+    <link href="../styles/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../styles/base.css" type="text/css" rel="stylesheet"/>
+    <link href="../styles/icons.css" type="text/css" rel="stylesheet"/>
+    <link href="../styles/layout.css" type="text/css" rel="stylesheet"/>
+    <link href="../styles/modules.css" type="text/css" rel="stylesheet"/>
   </head>
   <body>
     <main>
@@ -10,7 +15,7 @@
         <h1>Best Books!</h1>
       </div>
       <div class="two">
-        <h1>Search by Title or Author</h1>
+        <h1>Search Results</h1>
       </div>
       <div class="three">
         <% books.forEach( book => { %>
@@ -19,7 +24,6 @@
             <h4>"<%=book.authors%>"</h4>
             <p>"<%=book.description%>"</p>
         <% }) %>
-     
       </div>
       <div class="four">
         <div class="footer"></div>
