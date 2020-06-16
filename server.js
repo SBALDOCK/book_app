@@ -6,13 +6,13 @@ const cors = require('cors');
 app.use(cors());
 require('dotenv').config();
 const superagent = require('superagent');
-const { request } = require('express');
+
 
 require('ejs');
 
 const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static('public'));
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 
