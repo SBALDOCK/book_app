@@ -6,6 +6,7 @@ const cors = require('cors');
 app.use(cors());
 require('dotenv').config();
 const superagent = require('superagent');
+const { request } = require('express');
 
 require('ejs');
 
@@ -63,7 +64,7 @@ function Book(info) {
 }
 
 
-
+app.get('*', (request, res) => res.status(404).send('Sorry this route does not exist.'));
 
 
 app.listen(PORT, () => {
