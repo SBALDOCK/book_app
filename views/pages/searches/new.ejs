@@ -2,31 +2,30 @@
 <html lang="en">
   <head>
     <title>Book Collection</title>
-    <link href="styles/reset.css" type="text/css" rel="stylesheet"/>
-    <link href="styles/base.css" type="text/css" rel="stylesheet"/>
-    <link href="styles/icons.css" type="text/css" rel="stylesheet"/>
-    <link href="styles/layout.css" type="text/css" rel="stylesheet"/>
-    <link href="styles/modules.css" type="text/css" rel="stylesheet"/>
+    <link href="../styles/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../styles/base.css" type="text/css" rel="stylesheet"/>
+    <link href="../styles/icons.css" type="text/css" rel="stylesheet"/>
+    <link href="../styles/layout.css" type="text/css" rel="stylesheet"/>
+    <link href="../styles/modules.css" type="text/css" rel="stylesheet"/>
   </head>
   <body>
       
-    <main>
-        <h2>Search By Title Or Author</h2>
-        <form action="/contact" method="post">
+    <main class="newejs">
+        <h1>Best Books</h1>
+        <h2>Search by Title or Author</h2>
+        <form action="/searches" method="post">
             <fieldset>
-              <legend>Find Book</legend>
-              <label>
+                <p>Enter a title or author</p>
+              <input type="text" name="search" placeholder="search for new book" required>
                 <span>Title:</span>
-                <input type="text" name="title">
-              </label>
-              <label>
+                <input type="radio" name="search" value="title" required>
                 <span>Author:</span>
-                <input type="text" name="author">
-              </label>
-              <button>Submit</button>
+                <input type="radio" name="search" value="author" required>
+              <button>Search the Google Books API</button>
             </fieldset>
           </form>
-​
+​       <div class="footerdiv"></div>
     </main>
+    
   </body>
 </html>

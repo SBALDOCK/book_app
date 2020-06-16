@@ -48,29 +48,29 @@ Estimate of time needed to complete: 1hr
 
 Start time: 3:00
 
-Finish time: _____
+Finish time: 3:23
 
-Actual time needed to complete: _____
+Actual time needed to complete: 23min
 
 ### Feature #3: 
 
-Number and name of feature: ________________________________
+Number and name of feature: render submit form
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1hr
 
-Start time: _____
+Start time: 3:23
 
-Finish time: _____
+Finish time: 5:30
 
-Actual time needed to complete: _____
+Actual time needed to complete:2hrs
 
 ### Feature #4: 
 
-Number and name of feature: ________________________________
+Number and name of feature: Create error render
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 10min
 
-Start time: _____
+Start time: 5:30
 
 Finish time: _____
 
