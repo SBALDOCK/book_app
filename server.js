@@ -90,15 +90,15 @@ function getBooks (request, response) {
 
 // Add books from search results into database
 function addBooks (request,response) {
-  let {title, author, description} = request.body
-  let sql = 'INSERT INTO books (title, author, description) VALUES ($1, $2, $3) RETURNING ID;';
-  let safeValues = [title, author, description];
+  let {image_url, title, author, description, isbn, bookshelf} = request.body
+  let sql = 'INSERT INTO books (image_url, title, author, description, isbn, bookshelf) VALUES ($1, $2, $3, $4, $5, $6) RETURNING ID;';
+  let safeValues = [image_url, title, author, description, isbn, bookshelf];
 
   client.query(sql, safeValues)
     .then(results => {
       console.log(results.rows);
       let id = results.rows[0].id;
-      response.render(`/books/${id}`);
+      response.redirect(`/books/${id}`);
     })
 }
 
@@ -111,7 +111,7 @@ app.get('*', (request, res) => res.status(404).send('Sorry this route does not e
 // 1. Replaced all of the head content with the single line of code pointing to the new "head.ejs" file
 // 2. Added a new details.ejs file and pointed the "view details" button on the index.ejs file to this page
 // 3. Added a function called addBooks that should, at some point in the future, add favorited books from the show.ejs file into the database
-// 4. Styled the details.ejs file similarly to the rest of the pages. 
+// 4. Styled the details.ejs file similarly to the rest of the pages.
 
 
 // Things we need to do in order to get caught up
@@ -119,7 +119,6 @@ app.get('*', (request, res) => res.status(404).send('Sorry this route does not e
 // 1. Figure out how to store images in our database from the example seed/schema entries
 // 2. Style our index.ejs file to match the wireframe example
 // 3. Style our details.ejs file to match the wireframe example
-// 4. Add a button to our details.ejs file to take us back to index.ejs
 // 5. Add functionality to add selections from our show.ejs file to the database (using button add to favorites)
 // 6. Add button from index.ejs to initiate a book search (this should point to our new.ejs file)
 // 7.

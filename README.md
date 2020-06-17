@@ -84,13 +84,13 @@ Actual time needed to complete: 30 Minutes
 
 Number and name of feature: Feature 1
 
-Estimate of time needed to complete: 
+Estimate of time needed to complete: 2 Hours
 
-Start time: 
+Start time: 1:30PM
 
-Finish time: 
+Finish time: 7:30PM
 
-Actual time needed to complete: 
+Actual time needed to complete: 6 Hours
 
 ### Feature #2:
 
