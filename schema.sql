@@ -10,6 +10,6 @@ CREATE TABLE books (
   bookshelf VARCHAR(255)
 );
 
-INSERT INTO books(author, title) VALUES ('Herman Melville', 'Moby Dick');
+INSERT INTO books(author, title, image_url, description) VALUES ('Herman Melville', 'Moby Dick','placeholder', 'That is one mean whale');
 
 SELECT * FROM books;

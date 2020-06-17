@@ -9,17 +9,31 @@
     <link href="styles/modules.css" type="text/css" rel="stylesheet"/>
   </head>
   <body>
-      
-    <main>
-      <div class="container">
-        <div class="one">
+    <div class="container">
+      <div class="one">
         <h1>Best Books!</h1>
-        <button href="/searches/new.ejs" id="nav">Search Books</button>
-        </div>
-        <h4 class="two">My Book Collection</h4>
-  ​      <div class="three"></div>
-        <div class="four"></div>
       </div>
-    </main>
+      <div class="two">
+        <h1>Book Favorites</h1>
+      </div>
+        <div class="three">
+          <h2>You have <%=books.length%> books saved.</h2>
+          <% books.forEach(book => { %>
+            <div>
+              <span><%= book.image_url%></span>
+              <span><%= book.title%></span>
+              <span><%= book.author %></span>
+              <span><%= book.description%></span>
+              <a href="/books/<%= book.id %>">show details</a>
+            </div>
+          <% }) %>
+        </div>
+        <div class="four">
+          <div class="footer"></div>
+          <div class="footer"></div>
+          <div class="footer"></div>
+          <div class="footer"></div>
+        </div>
+      </div>
   </body>
 </html>
