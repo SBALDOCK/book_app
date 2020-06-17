@@ -78,15 +78,16 @@ function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
   this.image = info.imageLinks.thumbnail ? info.imageLinks.thumbnail : placeholderImage;
   this.title = info.title ? info.title : 'no title available';
-  this.author = info.authors ? info.authors : 'not available';
+  this.author = info.authors ? info.authors[0] : 'not available';
   this.description = info.description ? info.description: 'not available';
+  this.isbn = info.industryIdentifiers ? info.industryIdentifiers[0].identifier: 'not available';
 }
 
 // Add books from search results into database and favorites
 function addToFavorites(request,response) {
-  let {title, authors, description, image_url, isbn} = request.body
+  let {title, author, description, image, isbn} = request.body
   let sql = 'INSERT INTO books (image, title, author, description, isbn) VALUES ($1, $2, $3, $4, $5) RETURNING ID;';
-  let safeValues = [title, authors, description, image_url, isbn];
+  let safeValues = [image, title, author, description, isbn];
 
   client.query(sql, safeValues)
     .then(results => {
