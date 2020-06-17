@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang=“en”>
   <head>
-    <title>Book Collection</title>
-    <link href="../styles/reset.css" type="text/css" rel="stylesheet"/>
-    <link href="../styles/base.css" type="text/css" rel="stylesheet"/>
-    <link href="../styles/icons.css" type="text/css" rel="stylesheet"/>
-    <link href="../styles/layout.css" type="text/css" rel="stylesheet"/>
-    <link href="../styles/modules.css" type="text/css" rel="stylesheet"/>
+    <%- include('../head.ejs') %>
   </head>
   <body>
     <main>
@@ -17,15 +12,22 @@
         <div class="two">
           <h1>Search Results</h1>
         </div>
-        <div class="three">
-          <% books.forEach( book => { %>
-            <img src="<%=book.image%>" alt="<%=book.title%>" />
-            <h3>"<%=book.title%>"</h3>
-            <h4>"<%=book.authors%>"</h4>
-            <p>"<%=book.description%>"</p>
-          <% }) %>
+        <% books.forEach( book => { %>
+          <form action='/addBook' method="post"></form>
+            <div class="three">
+              <img src="<%=book.image%>" alt="<%=book.title%>" />
+              <h3>"<%=book.title%>"</h3>
+              <h4>"<%=book.authors%>"</h4>
+              <p>"<%=book.description%>"</p>
+            </div>
+            <input type=hidden src="<%=book.image%>" alt="<%=book.title%>" />
+            <input type=hidden name="title" value=<%=book.title%> />
+            <input type=hidden name="authors" value=<%=book.authors%> />
+            <input type=hidden name="description" value=<%=book.description%> />
+            <button>add to my favorites</button>
+          </form>
+        <% }) %>
          
-        </div>
         <div class="four">
           <div class="footer"></div>
           <div class="footer"></div>
