@@ -19,7 +19,7 @@
         <div class="three">
           <h2>You have <%=books.length%> books saved.</h2>
           <% books.forEach(book => { %>
-            <div>
+            <div id="render">
               <span><%= book.image_url%></span>
               <span><%= book.title%></span>
               <span><%= book.author %></span>
