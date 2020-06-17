@@ -13,7 +13,7 @@
           <h1>Search Results</h1>
         </div>
         <% books.forEach( book => { %>
-          <form action='/addBook' method="post"></form>
+          <form action='/add' method="post">
             <div class="three">
               <img src="<%=book.image%>" alt="<%=book.title%>" />
               <h3>"<%=book.title%>"</h3>
