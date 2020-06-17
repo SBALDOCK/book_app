@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../head.ejs') %>
+</head>
+<body>
+  <div class="container">
+    <div class="one">
+      <h1>Best Books!</h1>
+    </div>
+    <div class="two">
+      <h1>Book Details</h1>
+    </div>
+      <div class="three">
+        <section>
+          <h2><%= oneBook.title %><h2>
+          <h2><%= oneBook.author %></h2>
+          <p><%= oneBook.description %></p>
+          <p><%= oneBook.isbn %></p>
+          <p><%= oneBook.bookshelf %></p>
+        </section>
+        <button href="#">Back To All Books</button>
+      </div>
+      <div class="four">
+        <div class="footer"></div>
+        <div class="footer"></div>
+        <div class="footer"></div>
+        <div class="footer"></div>
+      </div>
+    </div>
+</body>
+</html>
