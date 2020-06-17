@@ -13,14 +13,22 @@
     </div>
       <div class="three">
         <section>
+          <img src="<%= oneBook.image %>" alt="<%= oneBook.title %>"/>
           <h2><%= oneBook.title %><h2>
           <h2><%= oneBook.author %></h2>
           <p><%= oneBook.description %></p>
           <p><%= oneBook.isbn %></p>
           <p><%= oneBook.bookshelf %></p>
         </section>
-        <a href="/">Back To All Books</a>
+        <a href="/">All Books</a>
       </div>
+
+      <form action="/update/ <%=oneBook.id %> ?_method=PUT" method="post">
+        <input type="text" name="title" value="<%- oneBook.title %>" placeholder="book name"/>
+        <input type="text" name="author" value="<%- oneBook.author %>" placeholder="author"/>
+        <input type="text" name="description" value="<%- oneBook.description %>" placeholder="description"/>
+        <button>submit</button>
+      </form>
       <div class="four">
         <div class="footer"></div>
         <div class="footer"></div>

@@ -11,11 +11,12 @@
       <div class="two">
         <h1>Book Favorites</h1>
       </div>
-        <div class="three">
-          <h2>You have <%=books.length%> books saved.</h2>
+      <div class="three">
+        <a href="/add">search for a book</a>
+        <h2>You have <%=books.length%> books saved.</h2>
           <% books.forEach(book => { %>
             <div id="render">
-              <span><%= book.image_url%></span>
+              <img src="<%= book.image%>" alt="picture of book" />
               <span><%= book.title%></span>
               <span><%= book.author %></span>
               <span><%= book.description%></span>
