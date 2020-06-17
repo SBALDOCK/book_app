@@ -25,17 +25,15 @@ app.use(express.static('public'));
 // look in the views folder for ejs files to use as our templating
 app.set('view engine', 'ejs');
 
-// establishing home route and rendering index.ejs file
-app.get('/', (request, res) => {
-  res.status(200).render('pages/index.ejs');
-})
+app.get('/', getBooks);
+app.post('/searches', bookSearch);
 
 // establishing searches/new route for searching a title or author
 app.get('/searches/new', (request, res) => {
   res.status(200).render('pages/searches/new.ejs');
 })
 
-app.post('/searches', (request, response) => {
+function bookSearch (request, response) {
   let query = request.body.search[0];
   let titleOrAuthor = request.body.search[1];
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';
@@ -54,7 +52,7 @@ app.post('/searches', (request, response) => {
       })
       response.status(200).render('pages/searches/show.ejs', { books: finalBookArray });
     }).catch(err => console.log(err));
-})
+}
 
 /// Book constructor
 function Book(info) {
@@ -65,19 +63,28 @@ function Book(info) {
   this.description = info.description ? info.description: 'not available';
 }
 
-
-app.post('/add', (request,response) => {
-  let {title, author, description} = request.body
-  let sql = 'INSERT INTO books (title, author, description) VALUES ($1, $2, $3) RETURNING ID;';
-  let safeValues = [title, author, description];
-
-  client.query(sql, safeValues)
-    .then(results => {
-      console.log(results.rows);
-      let id = results.rows[0].id;
-      response.render(`/books/${id}`);
+function getBooks (request, response) {
+  let sql = 'SELECT * FROM books;';
+  client.query(sql)
+    .then(sqlResults => {
+      let books = sqlResults.rows;
+      response.status(200).render('pages/index.ejs', {books: books})
     })
-})
+}
+
+
+// app.post('/add', (request,response) => {
+//   let {title, author, description} = request.body
+//   let sql = 'INSERT INTO books (title, author, description) VALUES ($1, $2, $3) RETURNING ID;';
+//   let safeValues = [title, author, description];
+
+//   client.query(sql, safeValues)
+//     .then(results => {
+//       console.log(results.rows);
+//       let id = results.rows[0].id;
+//       response.render(`/books/${id}`);
+//     })
+// })
 
 app.get('*', (request, res) => res.status(404).send('Sorry this route does not exist.'));
 
