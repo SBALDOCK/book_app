@@ -35,7 +35,7 @@ app.post('/searches', searchResults); // shows search results
 app.post('/details', addToFavorites); // add book to favorites and adds to details page
 app.get('/books/:id', bookDetails) // shows detail page
 // app.put(‘/update/:book_id’, updateBook)
-// app.delete('/delet/:book_id', deleteBook)
+// app.delete('/delete/:book_id', deleteBook)
 
 // Retrieves all books from database and renders on index.ejs page
 function homePage (request, response) {
@@ -112,14 +112,6 @@ function bookDetails(request, response) {
 app.get('*', (request, res) => res.status(404).send('Sorry this route does not exist.'));
 
 
-// Things we need to do in order to get caught up
-
-// 1. Figure out how to store images in our database from the example seed/schema entries
-// 2. Style our index.ejs file to match the wireframe example
-// 3. Style our details.ejs file to match the wireframe example
-// 5. Add functionality to add selections from our show.ejs file to the database (using button add to favorites)
-// 6. Add button from index.ejs to initiate a book search (this should point to our new.ejs file)
-
 // Update information in database - app.get above
 // corresponds with details.ejs form  
 // function updateBook (request, response) {
@@ -136,7 +128,6 @@ app.get('*', (request, res) => res.status(404).send('Sorry this route does not e
 //       response.redirect(`/books/${bookID}`);
 //     })
 // }
-
 
 // Delete book from database - app.get above
 // corresponds with details.ejs form  
