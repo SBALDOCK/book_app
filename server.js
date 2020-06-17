@@ -31,10 +31,11 @@ app.set('view engine', 'ejs');
 
 app.get('/', homePage); // rendering home page which shows all saved books
 app.get('/add', searchNewBook); // new book search page
+app.get('/edit', editBook);
 app.post('/searches', searchResults); // shows search results
 app.post('/details', addToFavorites); // add book to favorites and adds to details page
 app.get('/books/:id', bookDetails) // shows detail page
-// app.put(‘/update/:book_id’, updateBook)
+app.put('/update/:id', updateBook)
 // app.delete('/delete/:book_id', deleteBook)
 
 // Retrieves all books from database and renders on index.ejs page
@@ -50,6 +51,9 @@ function homePage (request, response) {
 // establishing searches/new route for searching a title or author - Do we need this?
 function searchNewBook (request, res) {
   res.status(200).render('pages/searches/new.ejs');
+}
+function editBook(request,res){
+  res.status(200).render('pages/searches/edit.ejs');
 }
 
 // Search for books at Google API
@@ -113,24 +117,25 @@ app.get('*', (request, res) => res.status(404).send('Sorry this route does not e
 
 
 // Update information in database - app.get above
-// corresponds with details.ejs form  
-// function updateBook (request, response) {
-//   console.log('this is our params', request.params);
-//   let bookID = request.params.book_id;
-//   console.log('form information to be updated', request.body);
-//   let {author, title, description} = request.body;
-//   let sql = 'UPDATE books SET author=$1, title=$2, description=$3 WHERE id=$4;';
-//   let safeValues = [author, title, description, bookID];
+// corresponds with details.ejs form
+function updateBook (request, response) {
+  console.log('this is our params', request.params);
+  let bookID = request.params.book_id;
+  console.log('form information to be updated', request.body);
+  let {author, title, description} = request.body;
+  let sql = 'UPDATE books SET author=$1, title=$2, description=$3 WHERE id=$4;';
+  let safeValues = [author, title, description, bookID];
 
-//   client.query(sql, safeValues)
-//     .then(sqlResults => {
-//       console.log(sqlResults)
-//       response.redirect(`/books/${bookID}`);
-//     })
-// }
+  client.query(sql, safeValues)
+    .then(sqlResults => {
+      console.log(sqlResults)
+      response.redirect(`/books/${bookID}`);
+    })
+}
+
 
 // Delete book from database - app.get above
-// corresponds with details.ejs form  
+// corresponds with details.ejs form
 // function deleteBook (request, response) {
 //   console.log('this is our params', request.params);
 //   let bookID = request.params.book_id;
