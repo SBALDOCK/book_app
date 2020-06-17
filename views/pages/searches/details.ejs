@@ -21,14 +21,11 @@
           <p><%= oneBook.bookshelf %></p>
         </section>
         <a href="/">All Books</a>
+      <div>
+        <a href="/books/edit.ejs">Update Details</a>
+        <a href="delete">Delete Book</a>
       </div>
-
-      <form action="/update/ <%=oneBook.id %> ?_method=PUT" method="post">
-        <input type="text" name="title" value="<%- oneBook.title %>" placeholder="book name"/>
-        <input type="text" name="author" value="<%- oneBook.author %>" placeholder="author"/>
-        <input type="text" name="description" value="<%- oneBook.description %>" placeholder="description"/>
-        <button>submit</button>
-      </form>
+      </div>
       <div class="four">
         <div class="footer"></div>
         <div class="footer"></div>
