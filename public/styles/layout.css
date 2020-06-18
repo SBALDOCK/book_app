@@ -109,3 +109,7 @@ span:nth-child(3){
 span:nth-child(4){
     margin-bottom: 30px;
 }
+
+img{
+    width: 200px;
+}

@@ -1,43 +1,39 @@
 'use strict';
 
+// libraries
+require('dotenv').config();
+require('ejs');
 const express = require('express');
 const app = express();
-require('dotenv').config();
 const superagent = require('superagent');
-require('ejs');
 const pg = require('pg');
-const client = new pg.Client(process.env.DATABASE_URL);
-client.on('error', err => console.error(err));
 const methodOverride = require('method-override');
-
-// turn on database before turning on the server
-client.connect()
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`listening on ${PORT}`);
-    })
-  });
 
 // Set up PORT
 const PORT = process.env.PORT || 3001;
-// Parse body of the request object - middleware
+const client = new pg.Client(process.env.DATABASE_URL);
+client.on('error', err => console.error(err));
+
+// MiddleWare
+// Parse body of the request object -
 app.use(express.urlencoded({ extended: true }));
-// lets us translate our post to a put
+// lets us translate (change our method using in HTML to a put or delete
 app.use(methodOverride('_method'));
 //  serve files from the public folder - front end files
 app.use(express.static('public'));
 // look in the views folder for ejs files to use as our templating
 app.set('view engine', 'ejs');
 
+// Routes
 app.get('/', homePage); // rendering home page which shows all saved books
 app.get('/add', searchNewBook); // new book search page
 app.post('/searches', searchResults); // shows search results
 app.post('/details', addToFavorites); // add book to favorites and adds to details page
 app.get('/books/:id', bookDetails) // shows detail page
-app.put('/update/:book_id', updateBook)
-app.delete('/update/:book_id', deleteBook)
+app.put('/update/:book_id', updateBook) // Update book details
+app.delete('/update/:book_id', deleteBook) // delete book from database
 
-// Retrieves all books from database and renders on index.ejs page
+// Render books from database on home page
 function homePage (request, response) {
   let sql = 'SELECT * FROM books;';
   client.query(sql)
@@ -47,13 +43,12 @@ function homePage (request, response) {
     }).catch(error => console.log(error))
 }
 
-// establishing searches/new route for searching a title or author - Do we need this?
+// Book Search
 function searchNewBook (request, res) {
   res.status(200).render('pages/searches/new.ejs');
 }
 
-
-// Search for books at Google API
+// Search Google API
 function searchResults (request, response) {
   let query = request.body.search[0];
   let titleOrAuthor = request.body.search[1];
@@ -84,7 +79,7 @@ function Book(info) {
   this.isbn = info.industryIdentifiers ? info.industryIdentifiers[0].identifier: 'not available';
 }
 
-// Add books from search results into database and favorites
+// Add books to favorites (insert into database)
 function addToFavorites(request,response) {
   let {title, author, description, image, isbn} = request.body
   let sql = 'INSERT INTO books (image, title, author, description, isbn) VALUES ($1, $2, $3, $4, $5) RETURNING ID;';
@@ -98,7 +93,7 @@ function addToFavorites(request,response) {
     }).catch('error', err => console.log(err));
 }
 
-// Render details of one book on details page when show details button is selected on index.ejs page
+// Render details of one book on details page 
 function bookDetails(request, response) {
   let id = request.params.id;
   let sql = 'SELECT * FROM books WHERE id=$1;';
@@ -110,10 +105,7 @@ function bookDetails(request, response) {
     }) .catch(error => console.log(error))
 }
 
-app.get('*', (request, res) => res.status(404).send('Sorry this route does not exist.'));
-
-
-// Update information in database - app.get above
+// Update information in database
 function updateBook (request, response) {
   console.log('this is our params', request.params);
   let bookID = request.params.book_id;
@@ -130,7 +122,6 @@ function updateBook (request, response) {
 }
 
 // Delete book from database - app.get above
-// corresponds with details.ejs form
 function deleteBook (request, response) {
   console.log('this is our params', request.params);
   let bookID = request.params.book_id;
@@ -143,3 +134,12 @@ function deleteBook (request, response) {
     })
 }
 
+// turn on server
+client.connect()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`listening on ${PORT}`);
+    })
+  });
+
+app.get('*', (request, res) => res.status(404).send('Sorry this route does not exist.'));
