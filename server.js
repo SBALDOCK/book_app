@@ -26,7 +26,6 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.get('/', homePage); // rendering home page which shows all saved books
-app.get('/add', searchNewBook); // new book search page
 app.post('/searches', searchResults); // shows search results
 app.post('/details', addToFavorites); // add book to favorites and adds to details page
 app.get('/books/:id', bookDetails) // shows detail page
@@ -41,11 +40,6 @@ function homePage (request, response) {
     .then(sqlResults => {
       response.status(200).render('pages/index.ejs', {books: sqlResults.rows})
     }).catch(error => console.log(error))
-}
-
-// Book Search
-function searchNewBook (request, res) {
-  res.status(200).render('pages/searches/new.ejs');
 }
 
 // Search Google API

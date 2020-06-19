@@ -1,40 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include('../head.ejs') %>
+    <%- include('../../partials/head.ejs') %>
   </head>
   <body>
-      
-    <main>
-      <div class="container">
-      <div class="one">
-        <h1>Best Books!</h1>
-      </div>
-      <div class="two">
-        <h1>Search by Title or Author</h1>
-      </div>
-        <div class="three">
-        <form action="/searches" method="post">
-                <input id="search" type="text" name="search" placeholder="Enter a title or author" required>
-              <div id="title">
-                <span>Title:</span>
-                <input type="radio" name="search" value="title" required>
-              </div>
-              <div id="author">
-                <span>Author:</span>
-                <input type="radio" name="search" value="author" required>
-              </div>
-                <button id="button">Search the Google Books API</button>
-        </form>
-        </div>
-        <div class="four">
-          <div class="footer"></div>
-          <div class="footer"></div>
-          <div class="footer"></div>
-          <div class="footer"></div>
-        </div>
-      </div>
-    </main>
-    
+    <%- include('../../partials/header.ejs') %>
+    <%- include('../../partials/landing.ejs') %>
+    <%- include('../../partials/footer.ejs') %>
   </body>
 </html>
