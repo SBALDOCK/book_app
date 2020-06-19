@@ -1,115 +1,126 @@
 
+ *{
+    box-sizing: border-box;
+  }
 
-body{
-    width: 480px;
-
-}
-
-.container{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 100px auto 100px;
+  html{
     height: 100vh;
-}
-.one{
-    border: 1px solid black;
-    color: white;
-    background-color: black;
-    font-size: 2em;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    line-height: 100px;
-}
-.two{
-    background-color: rgb(61, 60, 60);
-    border: 1px solid black;
-    color: white;
-    font-size: 1.5em;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;  
-    line-height: 100px;
-    text-align: center; 
-}
+  }
+  
+  html, body{
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    height: 100vh;
+  }
+  
+  header{
+      align-items: center;
+      background-color: black;
+      border: 1px solid black;
+      color: white;
+      display: flex;
+      flex-direction: row;
+      font-size: 2em;
+      justify-content: space-between;
+      padding: 5px;
+  }
+  
+  header h1{
+    margin-left: 10px;
+  }
+  
+  #bookpic{
+    margin-right: 30px;
+    height: 40px;
+  }
+  
+  .banner{
+      background-color: rgb(61, 60, 60);
+      border: 1px solid black;
+      color: white;
+      font-size: 1.5em;
+      padding: 10px;
+      text-align: center; 
+  }
 
-.three{
+  .container{
     align-items: center;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 3;
-    grid-row-end: 4; 
     background-color:rgb(149, 147, 147);
+    text-align: center;
+    height: 100vh;
+  }
+  
+  .content{
+    align-items: center;
     display: flex;
     flex-direction: column; 
     justify-content: flex-start;
-}
+    padding-top: 30px;
+  }
 
-.four{
-    align-items: center;
-    background-color: black;
-    display: flex;
-    flex-direction: row;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 4;
-    grid-row-end: 5; 
-    justify-content: space-around;
-}
-
-#search, #title, #author, #button{
+  
+  #search, #title, #author, #button{
     background-color: white;
     border-radius: 5px;
     border: 1px solid black;
     margin-top: 30px;
     padding: 20px;
     width: 275px;
-}
-
-#search{
+  }
+  
+  #search{
     font-size: 1em;
-}
-
-#title, #author{
+  }
+  
+  #title, #author{
     background-color: lightgray;
-}
-
-#button{
-    cursor: pointer;
+  }
+  
+  #button{
     background-color: black;
     color: white;
-    width: 320px;
-}
-
-.footer{
+    cursor: pointer;
+    width: 275px;
+  }
+  
+  footer{
+    align-items: center;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .footer{
     background-color: rgb(61, 60, 60);
     border-radius: 50%;
     height: 30px;
+    margin: 10px;
     width: 30px;
-}
+  } 
 
-#render{
-   display: flex;
-   flex-direction: column;
-   text-align: center;
-}
-span:nth-child(1){
-    margin-bottom: 20px;
-}
+  p{
+    margin-top: 30px;
+    text-align: center;
+    width: 400px;
+  }
 
-span:nth-child(2){
-    font-size: 1.5em;
+  button{
+    border-radius: 5px;
     margin-top: 20px;
-}
-span:nth-child(3){
-    font-size: 1.5em;
-}
-span:nth-child(4){
-    margin-bottom: 30px;
-}
+  }
 
-img{
-    width: 200px;
-}
+  img{
+    margin-bottom: 30px;
+  }
+
+  h3{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  h4{
+    font-size: 20px;
+  }

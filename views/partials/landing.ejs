@@ -1,0 +1,21 @@
+<main>
+  <div class="banner">
+    <h1>Book Favorites</h1>
+  </div>
+  <div class="container">
+    <div class="content">
+      <form action="/searches" method="post">
+        <input id="search" type="text" name="search" placeholder="Enter a title or author" required>
+        <div id="title">
+          <span>Title:</span>
+          <input type="radio" name="search" value="title" required>
+        </div>
+        <div id="author">
+          <span>Author:</span>
+          <input type="radio" name="search" value="author" required>
+        </div>
+          <button id="button">Search the Google Books API</button>
+      </form>
+    </div>
+  </div>
+</main>

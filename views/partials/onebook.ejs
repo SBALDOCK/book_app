@@ -1,0 +1,18 @@
+<div class="banner">
+  <h1>Book Details</h1>
+</div>
+<div class="container">
+<div class="content">
+    <img src="<%= oneBook.image %>" alt="<%= oneBook.title %>"/>
+    <h3><%= oneBook.title %><h3>
+    <h4><%= oneBook.author %></h4>
+    <p><%= oneBook.description %></p>
+    <p><%= oneBook.isbn %></p>
+    <p><%= oneBook.bookshelf %></p>
+    <a href="/">All Books</a>
+  <div>
+  </div>
+    <%- include('edit.ejs') %>
+    <%- include('delete.ejs') %>
+  </div>
+</div>
