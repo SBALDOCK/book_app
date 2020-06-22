@@ -118,7 +118,7 @@ function updateBook (request, response) {
     .then(sqlResults => {
       console.log(sqlResults)
       response.redirect(`/books/${bookID}`);
-    })
+    }).catch(error => console.log(error))
 }
 
 // Delete book from database - app.get above
@@ -140,6 +140,6 @@ client.connect()
     app.listen(PORT, () => {
       console.log(`listening on ${PORT}`);
     })
-  });
+  }).catch(error => console.log(error))
 
 app.get('*', (request, res) => res.status(404).send('Sorry this route does not exist.'));
