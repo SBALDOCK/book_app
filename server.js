@@ -25,7 +25,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 // Routes
-app.get('/', homePage); // rendering home page which shows all saved books
+// app.get('/', homePage); // rendering home page which shows all saved books
 app.get('/add', searchNewBook); // new book search page
 app.post('/searches', searchResults); // shows search results
 app.post('/details', addToFavorites); // add book to favorites and adds to details page
@@ -34,14 +34,14 @@ app.put('/update/:book_id', updateBook) // Update book details
 app.delete('/update/:book_id', deleteBook) // delete book from database
 
 // Render books from database on home page
-function homePage (request, response) {
-  let sql = 'SELECT * FROM books;';
-  client.query(sql)
-  return client.query(sql)
-    .then(sqlResults => {
-      response.status(200).render('pages/index.ejs', {books: sqlResults.rows})
-    }).catch(error => console.log(error))
-}
+// function homePage (request, response) {
+//   let sql = 'SELECT * FROM books;';
+//   client.query(sql)
+//   return client.query(sql)
+//     .then(sqlResults => {
+//       response.status(200).render('pages/index.ejs', {books: sqlResults.rows})
+//     }).catch(error => console.log(error))
+// }
 
 // Book Search
 function searchNewBook (request, res) {
