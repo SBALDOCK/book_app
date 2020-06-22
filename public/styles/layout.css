@@ -3,18 +3,13 @@
     box-sizing: border-box;
   }
 
-  html{
-    height: 100vh;
-  }
   
   html, body{
     margin: 0;
     padding: 0;
   }
   
-  body{
-    height: 100vh;
-  }
+ 
   
   header{
       align-items: center;
@@ -50,7 +45,7 @@
     align-items: center;
     background-color:rgb(149, 147, 147);
     text-align: center;
-    height: 100vh;
+    height: 100%;
   }
   
   .content{
